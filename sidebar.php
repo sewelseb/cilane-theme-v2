@@ -8,11 +8,7 @@
  * @since   1.0.0
  */
 
-if ( ! primer_layout_has_sidebar() || ! is_active_sidebar( 'sidebar-1' ) ) {
-
-	return;
-
-}
+if ( ! primer_layout_has_sidebar() || ! is_active_sidebar( 'sidebar-1' ) ) return;
 
 
 function isAPost() {
@@ -55,7 +51,6 @@ function isWhoIsWho(string $id) :bool {
 
 	return false;
 }
-
 
 
 ?>
@@ -110,6 +105,10 @@ function isWhoIsWho(string $id) :bool {
 
 		</div><!-- #secondary -->
 		<?php
+	}
+	elseif(is_front_page()) //do not display on landing page 
+	{
+
 	}
 	else
 	{

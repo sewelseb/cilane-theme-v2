@@ -17,8 +17,20 @@
     float: right !important;
 }
 
-.site-content {
+.site-content-double-collumn {
     max-width: 1200px !important;
+}
+
+.site-content-single-collumn {
+
+}
+
+.content-area-full-with {
+    width: 100% !important;
+}
+
+.site-main-single-page {
+    width: 100% !important;
 }
 
 .page-title-container .page-header {
