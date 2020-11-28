@@ -15,6 +15,12 @@ if ( ! primer_layout_has_sidebar() || ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 
 
+function isAPost() {
+	global  $post;
+	$posttype = get_post_type($post );
+	return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
+}
+
 function isWhatIsCilane(string $id) :bool {
 	if($id == 165) return true;
 
@@ -37,6 +43,8 @@ function isJugendaustausch(string $id) :bool {
 
 function isArticles(string $id) :bool {
 	if($id == 2057) return true;
+	if(is_home()) return true;
+	if(isAPost()) return true;
 
 	return false;
 }
