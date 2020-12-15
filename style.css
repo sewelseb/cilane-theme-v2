@@ -40,3 +40,7 @@
 .main-navigation {
     max-width: 1200px !important;
 }
+
+body .main-navigation .primer-wc-cart-menu {
+    display: none !important;
+}
