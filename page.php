@@ -18,20 +18,10 @@ get_header(); ?>
 
 
 	
-<?php
-	if(is_front_page()) {
-		?>
-			<div id="primary" class="content-area content-area-full-with">
-				<main id="main" class="site-main site-main-single-page" role="main">
-		<?php
-	}
-	else {
-		?>
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main" role="main">
-		<?php
-	}
-?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
 
 		<?php
 
