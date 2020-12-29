@@ -141,6 +141,14 @@ function restrict_events( $where_sql ) {
   return $wpdb->prepare( " $where_sql AND $wpdb->posts.post_type <> %s ", Tribe__Events__Main::POSTTYPE );
 }
 
+  //remove Archive mention https://theeventscalendar.com/knowledgebase/k/remove-archives-from-calendar-page-title/
+add_filter( 'get_the_archive_title', function ( $title ) {
+  if ( is_post_type_archive( 'tribe_events' ) ) {
+    $title = sprintf( __( '%s' ), post_type_archive_title( '', false ) );
+  }
+  return $title;    
+});
+
 /**
  * end Events
  */
