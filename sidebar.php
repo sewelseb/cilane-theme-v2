@@ -19,6 +19,36 @@ function isAPost() {
 
 function isWhatIsCilane(string $id) :bool {
 	if($id == 165) return true;
+	if($id == 63) return true;
+	if($id == 70) return true;
+	if($id == 47) return true;
+	if($id == 2017) return true;
+	if($id == 2460) return true;
+	if($id == 1116) return true;
+	if($id == 1123) return true;
+	if($id == 1167) return true;
+	if($id == 1649) return true;
+
+	return false;
+}
+
+function isAssociations(string $id) :bool {
+	if($id == 1998) return true;
+	if($id == 135) return true;
+	if($id == 137) return true;
+	if($id == 139) return true;
+	if($id == 141) return true;
+	if($id == 143) return true;
+	if($id == 145) return true;
+	if($id == 147) return true;
+	if($id == 149) return true;
+	if($id == 151) return true;
+	if($id == 153) return true;
+	if($id == 155) return true;
+	if($id == 157) return true;
+	if($id == 159) return true;
+	if($id == 161) return true;
+	if($id == 163) return true;
 
 	return false;
 }
@@ -62,6 +92,16 @@ function isWhoIsWho(string $id) :bool {
 		<div id="secondary" class="widget-area" role="complementary">
 
 			<?php dynamic_sidebar( 'sidebar-what-is-cilane-contextual' ); ?>
+
+		</div><!-- #secondary -->
+		<?php
+	}
+	elseif(isAssociations($id))
+	{
+		?>
+		<div id="secondary" class="widget-area" role="complementary">
+
+			<?php dynamic_sidebar( 'sidebar-Associations-contextual' ); ?>
 
 		</div><!-- #secondary -->
 		<?php
