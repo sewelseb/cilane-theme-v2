@@ -37,6 +37,10 @@
     max-width: 1200px !important;
 }
 
+.page-title-container .page-header .page-title {
+    padding: 2% 1rem; !important
+}
+
 .main-navigation {
     max-width: 1200px !important;
 }
