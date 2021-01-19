@@ -38,7 +38,7 @@
 }
 
 .page-title-container .page-header .page-title {
-    padding: 2% 1rem; !important
+    padding: 2% 1rem; 
 }
 
 .main-navigation {
@@ -46,5 +46,9 @@
 }
 
 body .main-navigation .primer-wc-cart-menu {
+    display: none !important;
+}
+
+.posted-author {
     display: none !important;
 }
