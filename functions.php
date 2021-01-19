@@ -51,7 +51,16 @@ function primer_child_register_sidebars() {
                 'after_title'   => '</h4>',
             ),
 
-			      'sidebar-congres-contextual' => array(
+            'sidebar-archives-contextual' => array(
+                'name'          => esc_html__( 'Contextual Archives Sidebar', 'primer' ),
+                'description'   => esc_html__( 'for ...', 'primer' ),
+                'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</aside>',
+                'before_title'  => '<h4 class="widget-title">',
+                'after_title'   => '</h4>',
+            ),
+
+			'sidebar-congres-contextual' => array(
                 'name'          => esc_html__( 'Contextual Congres Sidebar', 'primer' ),
                 'description'   => esc_html__( 'for ...', 'primer' ),
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',

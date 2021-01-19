@@ -28,9 +28,6 @@ function isWhatIsCilane(string $id) :bool {
 	if($id == 1123) return true;
 	if($id == 1167) return true;
 	if($id == 1649) return true;
-	if($id == 2626) return true;
-	if($id == 2628) return true;
-	if($id == 2632) return true;
 
 	return false;
 }
@@ -52,6 +49,14 @@ function isAssociations(string $id) :bool {
 	if($id == 159) return true;
 	if($id == 161) return true;
 	if($id == 163) return true;
+
+	return false;
+}
+
+function isArchives(string $id) :bool {
+	if($id == 2626) return true;
+	if($id == 2628) return true;
+	if($id == 2632) return true;
 
 	return false;
 }
@@ -111,6 +116,16 @@ function isWhoIsWho(string $id) :bool {
 		<div id="secondary" class="widget-area" role="complementary">
 
 			<?php dynamic_sidebar( 'sidebar-Associations-contextual' ); ?>
+
+		</div><!-- #secondary -->
+		<?php
+	}
+	elseif(isArchives($id))
+	{
+		?>
+		<div id="secondary" class="widget-area" role="complementary">
+
+			<?php dynamic_sidebar( 'sidebar-Archives-contextual' ); ?>
 
 		</div><!-- #secondary -->
 		<?php
