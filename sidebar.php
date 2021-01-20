@@ -57,6 +57,9 @@ function isArchives(string $id) :bool {
 	if($id == 2626) return true;
 	if($id == 2628) return true;
 	if($id == 2632) return true;
+	if($id == 2705) return true;
+	if($id == 2707) return true;
+	if($id == 2709) return true;
 
 	return false;
 }
