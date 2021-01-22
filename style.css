@@ -31,6 +31,13 @@
     }
 }
 
+@media only screen and (min-width: 61.063em) {
+  .layout-two-column-default .content-area {
+    width: 68.88889%; }
+  .layout-two-column-default #secondary {
+    width: 25.55556%; }
+}
+
 .content-area-full-with {
     width: 100% !important;
 }
