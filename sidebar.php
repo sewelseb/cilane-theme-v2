@@ -76,6 +76,7 @@ function isJugendaustausch(string $id) :bool {
 	if($id == 72) return true;
 	if($id == 2649) return true;
 	if($id == 2653) return true;
+	if($id == 2335) return true;
 
 	return false;
 }
