@@ -54,6 +54,8 @@ function isAssociations(string $id) :bool {
 	if($id == 159) return true;
 	if($id == 161) return true;
 	if($id == 163) return true;
+	if($id == 2858) return true;
+	if($id == 2860) return true;
 
 	return false;
 }
