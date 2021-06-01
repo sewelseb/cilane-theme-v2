@@ -74,7 +74,14 @@ function isArchives(string $id) :bool {
 function isCongres(string $id) :bool {
 	if($id == 1449) return true;
 	if($id == 1638) return true;
+	if($id == 3156) return true;
 	if($id == 1576) return true;
+	if($id == 3139) return true;
+	if($id == 3162) return true;
+	if($id == 3167) return true;
+	if($id == 3189) return true;
+	if($id == 3182) return true;
+	if($id == 3106) return true;
 
 	return false;
 }
