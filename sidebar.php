@@ -82,6 +82,7 @@ function isCongres(string $id) :bool {
 	if($id == 3189) return true;
 	if($id == 3182) return true;
 	if($id == 3106) return true;
+	if($id == 3339) return true;
 
 	return false;
 }
