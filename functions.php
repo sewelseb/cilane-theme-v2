@@ -117,6 +117,7 @@ add_action( 'widgets_init', 'primer_child_register_sidebars' );
 /**
  * Events
  */
+/*
 add_filter( 'tribe_events_pre_get_posts', 'redirect_from_events' );
 function redirect_from_events( $query ) {
   if ( is_user_logged_in() )
@@ -143,6 +144,7 @@ function redirect_from_events( $query ) {
   wp_safe_redirect( $url );
   exit;
 }
+
 add_filter( 'posts_where', 'restrict_events', 100 );
 function restrict_events( $where_sql ) {
   global $wpdb;
@@ -159,6 +161,14 @@ add_filter( 'get_the_archive_title', function ( $title ) {
   }
   return $title;    
 });
+*/
+function redirect_to_login() {
+    if ( ! is_user_logged_in() && ( is_singular( 'tribe_events' ) || is_post_type_archive( 'tribe_events' ) ) ) {
+        wp_redirect( home_url( '/index.php/login/?redirect_to=' . urlencode( get_permalink() ) ) );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'redirect_to_login' );
 
 /**
  * end Events
