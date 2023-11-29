@@ -174,6 +174,18 @@ add_action( 'template_redirect', 'redirect_to_login' );
  * end Events
  */
 
+/**
+ * WooCommerce redirect
+ */
+
+function redirect_wc_to_login() {
+    if ( ! is_user_logged_in() && ( is_woocommerce() || is_shop() || is_cart() || is_checkout() || is_product() ) ) {
+        wp_redirect( home_url( '/index.php/login/?redirect_to=' . urlencode( get_permalink() ) ) );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'redirect_wc_to_login' );
+
 
 
  //no author in posts
