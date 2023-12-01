@@ -154,6 +154,8 @@ function restrict_events( $where_sql ) {
   return $wpdb->prepare( " $where_sql AND $wpdb->posts.post_type <> %s ", Tribe__Events__Main::POSTTYPE );
 }
 
+*/
+
   //remove Archive mention https://theeventscalendar.com/knowledgebase/k/remove-archives-from-calendar-page-title/
 add_filter( 'get_the_archive_title', function ( $title ) {
   if ( is_post_type_archive( 'tribe_events' ) ) {
@@ -161,7 +163,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
   }
   return $title;    
 });
-*/
+
 function redirect_to_login() {
     if ( ! is_user_logged_in() && ( is_singular( 'tribe_events' ) || is_post_type_archive( 'tribe_events' ) ) ) {
         wp_redirect( home_url( '/index.php/login/?redirect_to=' . urlencode( get_permalink() ) ) );
