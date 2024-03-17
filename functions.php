@@ -87,7 +87,7 @@ function primer_child_register_sidebars() {
                 'before_title'  => '<h4 class="widget-title">',
                 'after_title'   => '</h4>',
             ),
-
+			
             'sidebar-jugendaustausch-contextual' => array(
               'id'            => "sidebar-jugendaustausch-contextual",
               'name'          => esc_html__( 'Contextual Jugendaustausch Sidebar', 'primer' ),
@@ -172,6 +172,40 @@ function redirect_to_login() {
 }
 add_action( 'template_redirect', 'redirect_to_login' );
 
+
+
+/**
+ * Add a list of clickable category links below the event
+ * search bar.
+ * https://theeventscalendar.com/knowledgebase/add-a-list-of-category-links-below-the-search-bar-2/
+ *
+ * Can be easily styled using the following selector:
+ *
+ * .the-events-calendar-category-list
+ */
+add_action(
+    'tribe_template_after_include:events/v2/components/events-bar',
+    function() {
+        $terms = get_terms( [ 'taxonomy' => Tribe__Events__Main::TAXONOMY ] );
+ 
+        if ( empty( $terms ) || is_wp_error( $terms ) ) {
+            return;
+        }
+ 
+        echo '<div class="the-events-calendar-category-list"><ol>';
+ 
+        foreach ( $terms as $single_term ) {
+            $url  = esc_url( get_term_link( $single_term ) );
+            $name = esc_html( get_term_field( 'name', $single_term ) );
+ 
+            echo "<li><a href='$url'>$name</a> </li>";
+        }
+ 
+        echo '</ol></div>';
+    }
+);
+
+
 /**
  * end Events
  */
@@ -188,6 +222,25 @@ function redirect_wc_to_login() {
 }
 add_action( 'template_redirect', 'redirect_wc_to_login' );
 
+/**
+ * end WooCommerce
+ */
+
+/**
+ * KnowledgeBase redirect
+ */
+
+function redirect_kb_to_login() {
+    if( !is_user_logged_in() && strpos( $_SERVER['REQUEST_URI'], '/index.php/documents/' ) !== false ) {
+        wp_redirect( home_url( '/index.php/login/?redirect_to=' . urlencode( $_SERVER['REQUEST_URI'] ) ) );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'redirect_kb_to_login' );
+
+/**
+ *end KnowledgeBase
+ */
 
 
  //no author in posts
@@ -201,3 +254,4 @@ add_action( 'template_redirect', 'redirect_wc_to_login' );
 //     )
 //   );
 // }
+
