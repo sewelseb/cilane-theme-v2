@@ -35,6 +35,7 @@ function isWhatIsCilane(string $id) :bool {
 	if($id == 2813) return true;
 	if($id == 3496) return true;
 	if($id == 4015) return true;
+	if($id == 4378) return true;
 
 	return false;
 }
